@@ -73,24 +73,40 @@ const extentions = [
     }
   ]
 
-const html = `<aside class="bg-[#212636] pt-4 pl-4 pr-4 w-96 h-44 rounded-2xl text-white">
-        <div class="flex gap-3 items-start h-[103px]">
-          <img src="./assets/images/logo-devlens.svg" alt="">
-          <div class="">
-            <p class="text-lg font-semibold h-6 -mt-1 mb-1">DevLens</p>
-            <article class="text-[#fbfdfeb3] text-sm w-64">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ad veritatis minus,
-            </article>
-          </div>
-        </div>
+const productsForm = document.querySelector('form')
 
-            <div class="flex justify-between items-center">
-              <button class="cursor-pointer text-[] w-20 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">
-                Remove
-              </button>
-              <label for="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-              </label>
-            </div>
-      </aside>`
+
+extentions.forEach((extention) =>{
+    const html = `<aside class="bg-[#212636] pt-4 pl-4 pr-4 w-96 h-44 rounded-2xl text-white">
+    <div class="flex gap-3 items-start h-[103px]">
+      <img src="${extention.logo}" alt="">
+      <div class="">
+        <p class="text-lg font-semibold h-6 -mt-1 mb-1">${extention.name}</p>
+        <article class="text-[#fbfdfeb3] text-sm w-64">
+          ${extention.description}
+        </article>
+      </div>
+    </div>
+
+        <div class="flex justify-between items-center">
+          <button class="cursor-pointer text-[] w-20 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">
+            Remove
+          </button>
+          <label for="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+  </aside>`
+  productsForm.innerHTML += html
+})
+
+// for(let i = 0; i <extentions.length; i++){
+
+// }
+
+// function loadExtentions(ele){
+    
+//  ele.innerHTML = html
+// }
+
