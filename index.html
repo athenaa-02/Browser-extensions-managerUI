@@ -5,10 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Browser extensions manager UI</title>
+    <link rel="stylesheet" href="input.css">
   <link href="./output.css" rel="stylesheet">
   <script src="main.js" defer></script>
 </head>
-<body class="bg-">
+<body class="linear p-0 m-0">
+  <section class="h-full ml-16 mr-16 mt-8">
+   <header class="flex justify-between text-center p-2 h-12 text-white bg-[#212636] rounded-lg">
+      <h1 class="font-bold text-lg">Extensions</h1>
+      <div class="w-8 h-8 bg-[#2f364b] rounded-lg cursor-pointer flex justify-center">
+        <img src="./assets/images/icon-sun.svg" class="w-5" alt="">
+      </div>
+   </header>
+   <main>
+    <!-- sort buttons -->
+    <section class="mt-8">
+      <article class="text-white flex h-18 items-center justify-between">
+        <p class="text-2xl font-bold">Extensions List</p>
+      <aside class="flex gap-2 text-sm">
+        <div class="cursor-pointer w-14 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">All</div>
+        <div class="cursor-pointer w-18 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">Active</div>
+        <div class="cursor-pointer w-20 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">Inactive</div>
+      </aside>
+      </article>
 
+      <!-- extentions list -->
+
+      <aside class="bg-[#212636] pt-4 pl-4 pr-4 w-96 h-44 rounded-2xl text-white">
+        <div class="flex gap-3 items-start h-[103px]">
+          <img src="./assets/images/logo-devlens.svg" alt="">
+          <div class="">
+            <p class="text-lg font-semibold h-6 -mt-1 mb-1">DevLens</p>
+            <article class="text-[#fbfdfeb3] text-sm w-64">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ad veritatis minus,
+            </article>
+          </div>
+        </div>
+
+            <div class="flex justify-between items-center">
+              <button class="cursor-pointer text-[] w-20 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">
+                Remove
+              </button>
+              <label for="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+      </aside>
+
+    </section>
+   </main>
+</section>
 </body>
 </html>
