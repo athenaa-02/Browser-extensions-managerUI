@@ -9,28 +9,28 @@
   <link href="./output.css" rel="stylesheet">
   <script src="main.js" defer></script>
 </head>
-<body class="linear p-0 m-0 pb-5 box-content">
+<body class="linear p-0 m-0 pb-5 box-content ">
   <section class="h-full ml-16 mr-16 mt-8">
-   <header class="flex justify-between text-center p-2 h-12 text-white bg-[#212636] rounded-lg">
+   <header onclick="actionsHandler(event)" class="flex justify-between text-center p-2 h-12 text-white bg-[#212636] rounded-lg">
       <h1 class="font-bold text-lg">Extensions</h1>
-      <div class="w-8 h-8 bg-[#2f364b] rounded-lg cursor-pointer flex justify-center">
-        <img src="./assets/images/icon-sun.svg" class="w-5" alt="">
+      <div id="bg_mode" class="w-8 h-8 bg-[var(--prmal)] rounded-lg cursor-pointer flex justify-center" >
+        <img id="bg_mode" src="./assets/images/icon-sun.svg" class="w-5" alt="">
       </div>
    </header>
    <main>
     <!-- sort buttons -->
     <section class="mt-8">
-      <article class="text-white flex h-18 items-center justify-between">
+      <article onclick="actionsHandler(event)" class="text-white flex h-18 items-center justify-between">
         <p class="text-2xl font-bold">Extensions List</p>
       <aside class="flex gap-2 text-sm">
-        <div class="cursor-pointer w-14 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">All</div>
-        <div class="cursor-pointer w-18 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">Active</div>
-        <div class="cursor-pointer w-20 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">Inactive</div>
+        <div id="all" class="cursor-pointer w-14 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">All</div>
+        <div id="active" class="cursor-pointer w-18 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">Active</div>
+        <div id="inactive" class="cursor-pointer w-20 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">Inactive</div>
       </aside>
       </article>
 
       <!-- extentions list -->
-       <form  class="flex gap-3 flex-wrap justify-center">
+       <form onclick="actionsHandler(event)" class="flex gap-3 flex-wrap justify-center">
 
       
     </form>

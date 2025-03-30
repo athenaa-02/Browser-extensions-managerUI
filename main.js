@@ -74,39 +74,93 @@ const extentions = [
   ]
 
 const productsForm = document.querySelector('form')
+const bgMode = document.querySelector('#bg_mode') 
+const body = document.body
 
 
-extentions.forEach((extention) =>{
+
+function productLoad(extentionsArr){ 
+  extentionsArr.forEach((extention) =>{
+  const {logo, name, description} = extention;
+
     const html = `<aside class="bg-[#212636] pt-4 pl-4 pr-4 w-96 h-44 rounded-2xl text-white">
     <div class="flex gap-3 items-start h-[103px]">
-      <img src="${extention.logo}" alt="">
+      <img src="${logo}" alt="">
       <div class="">
-        <p class="text-lg font-semibold h-6 -mt-1 mb-1">${extention.name}</p>
+        <p class="text-lg font-semibold h-6 -mt-1 mb-1">${name}</p>
         <article class="text-[#fbfdfeb3] text-sm w-64">
-          ${extention.description}
+          ${description}
         </article>
       </div>
     </div>
 
         <div class="flex justify-between items-center">
-          <button class="cursor-pointer text-[] w-20 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">
+          <button id="remove" class="cursor-pointer text-[] w-20 h-10 flex items-center justify-center rounded-3xl bg-[#2f364b]">
             Remove
           </button>
           <label for="switch">
-            <input type="checkbox">
+            <input id="checkbox" type="checkbox">
             <span class="slider"></span>
           </label>
         </div>
   </aside>`
   productsForm.innerHTML += html
 })
+}
 
-// for(let i = 0; i <extentions.length; i++){
 
-// }
+function clearInside(ele){
+  ele.innerHTML = ''
+}
 
-// function loadExtentions(ele){
+
+function activesArr(array){
+   
+  return  array.filter((extention) =>{
+    return extention.isActive === true
+  })
+}
+
+function passivesArr(array){
+  return array.filter((extention) =>{
+    return extention.isActive === false
+  })
+}
+
+let activeExtentionsArr = activesArr(extentions);
+let passiveExtentionsArr = passivesArr(extentions)
+
+
+
+function actionsHandler(clickedEle){
+  let exactClickId = clickedEle.target.id
+  // exactClick.preventDefault()
+
+  if(exactClickId === 'bg_mode'){
+    let bodyClass = body.classList
     
-//  ele.innerHTML = html
-// }
+        if(bodyClass.contains('linear')){
+          bodyClass.replace('linear', 'white_background')
+        }else{
+          bodyClass.replace('white_background', 'linear')
+        }
+  }
+  if(exactClickId === 'all' ){
+    clearInside(productsForm)
+    productLoad(extentions)
+  }
+  if(exactClickId === 'active'){
+    clearInside(productsForm)
+    productLoad(activeExtentionsArr)
+  }
+  if(exactClickId === 'inactive'){
+    clearInside(productsForm)
+    productLoad(passiveExtentionsArr)
+  }
+  // if(exactClickId === 'remove'){
+  // }
 
+}
+
+
+productLoad(extentions)
